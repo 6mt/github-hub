@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GitHub Hub · 6mt</title>
+<style>
+  :root{--bg:#0d1117;--card:#161b22;--border:#30363d;--fg:#e6edf3;--muted:#8b949e;--accent:#58a6ff}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.6 -apple-system,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;padding:24px}
+  .wrap{max-width:1080px;margin:0 auto}
+  h1{font-size:20px;margin:0 0 4px}
+  .sub{color:var(--muted);font-size:12px;margin-bottom:20px}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-bottom:24px}
+  .stat{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 16px}
+  .stat b{font-size:22px;display:block}
+  .stat span{color:var(--muted);font-size:12px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin-bottom:28px}
+  .repo{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+  .repo a{color:var(--accent);text-decoration:none;font-weight:600;font-size:15px}
+  .repo .desc{color:var(--muted);font-size:12px;margin:4px 0 8px;min-height:16px}
+  .badges{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+  .badges b{color:var(--fg)}
+  .feed{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+  .feed h2{margin:0;padding:12px 16px;font-size:14px;border-bottom:1px solid var(--border)}
+  .item{padding:10px 16px;border-bottom:1px solid var(--border)}
+  .item:last-child{border-bottom:none}
+  .item .meta{color:var(--muted);font-size:12px}
+  .item a{color:var(--accent);text-decoration:none}
+  .item .body{color:var(--muted);font-size:12px;white-space:pre-wrap;word-break:break-word;max-height:3.2em;overflow:hidden;margin-top:2px}
+  .tag{display:inline-block;background:#21262d;border-radius:10px;padding:0 8px;font-size:11px;margin-right:6px}
+  .err{color:#f85149;padding:40px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🐙 GitHub Hub · 6mt</h1>
+  <div class="sub" id="sub">loading…</div>
+  <div class="stats" id="stats"></div>
+  <div class="grid" id="repos"></div>
+  <div class="feed"><h2>📜 动态流</h2><div id="feed"></div></div>
+</div>
+<script>
+const KIND_LABEL={issue:'新 issue','issue-opened':'新 issue','issue-closed':'issue 关闭','issue-reopened':'issue 重开','issue-comment':'issue 评论',pr:'PR','pr-opened':'新 PR','pr-closed':'PR 关闭','pr-merged':'PR 合并','pr-reopened':'PR 重开','pr-review':'PR review','pr-comment':'PR 评论','stars':'⭐ star','fork':'fork'};
+const esc=s=>(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const when=iso=>{const d=(Date.now()-new Date(iso))/1e3;if(d<3600)return Math.max(1,d/60|0)+' 分钟前';if(d<86400)return (d/3600|0)+' 小时前';return (d/86400|0)+' 天前'};
+fetch('data/data.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{
+  document.getElementById('sub').textContent=`更新于 ${new Date(d.generatedAt).toLocaleString('zh-CN')} · 每 30 分钟自动刷新 · ${d.totals.repos} 个仓库`;
+  document.getElementById('stats').innerHTML=[
+    ['⭐ Stars',d.totals.stars],['🍴 Forks',d.totals.forks],
+    ['🐛 Open Issues',d.totals.openIssues],['🔀 Open PRs',d.totals.openPRs]
+  ].map(([k,v])=>`<div class="stat"><b>${v}</b><span>${k}</span></div>`).join('');
+  document.getElementById('repos').innerHTML=d.repos.map(r=>`
+    <div class="repo">
+      <a href="${r.url}" target="_blank">${r.repo.split('/')[1]}</a>
+      <div class="desc">${esc(r.desc)}${r.language?' · '+esc(r.language):''}</div>
+      <div class="badges"><span>⭐ <b>${r.stars}</b></span><span>🍴 <b>${r.forks}</b></span>
+      <span>issues <b>${r.openIssues}</b></span><span>PRs <b>${r.openPRs}</b></span></div>
+    </div>`).join('');
+  document.getElementById('feed').innerHTML=d.feed.length?d.feed.map(i=>`
+    <div class="item">
+      <div><span class="tag">${KIND_LABEL[i.kind]||i.kind}</span>
+      <a href="${i.url}" target="_blank">${esc(i.title)}</a></div>
+      <div class="meta">${i.repo} · ${i.actor?esc(i.actor)+' · ':''}${when(i.at)}</div>
+      ${i.body?`<div class="body">${esc(i.body)}</div>`:''}
+    </div>`).join(''):'<div class="item meta">暂无动态</div>';
+}).catch(()=>document.getElementById('sub').innerHTML='<span class="err">加载失败：还没有 data/data.json，请先手动触发一次 Actions</span>');
+setTimeout(()=>location.reload(),5*60*1000);
+</script>
+</body>
+</html>
