@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-09-30T08:50:53.912Z",
+  "repos": [
+    {
+      "repo": "6mt/dsh-plugin-loopback-trust",
+      "url": "https://github.com/6mt/dsh-plugin-loopback-trust",
+      "desc": "Restore Host-persisted settings in dsh web behind a reverse proxy — marks the page connection as host-owning so Settings/Models pages load on non-loopback hostnames (dsh 0.1.7).",
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 0,
+      "openPRs": 0,
+      "pushedAt": "2026-09-30T07:49:21Z",
+      "language": "JavaScript"
+    },
+    {
+      "repo": "6mt/hello-world",
+      "url": "https://github.com/6mt/hello-world",
+      "desc": "",
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 0,
+      "openPRs": 0,
+      "pushedAt": "2019-06-25T07:14:05Z",
+      "language": ""
+    }
+  ],
+  "totals": {
+    "stars": 0,
+    "forks": 0,
+    "openIssues": 0,
+    "openPRs": 0,
+    "repos": 2
+  },
+  "feed": []
+}
