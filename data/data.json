@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-10-11T11:16:10.172Z",
+  "generatedAt": "2026-10-11T16:42:54.683Z",
   "repos": [
+    {
+      "repo": "6mt/x-prompt-diff-lab",
+      "url": "https://github.com/6mt/x-prompt-diff-lab",
+      "desc": "Prompt Diff Lab — side-by-side prompt & output diff (local-first)",
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 0,
+      "openPRs": 0,
+      "pushedAt": "2026-10-11T12:33:30Z",
+      "language": "TypeScript"
+    },
     {
       "repo": "6mt/github-hub",
       "url": "https://github.com/6mt/github-hub",
@@ -9,7 +20,7 @@
       "forks": 0,
       "openIssues": 0,
       "openPRs": 0,
-      "pushedAt": "2026-10-11T04:31:49Z",
+      "pushedAt": "2026-10-11T11:16:10Z",
       "language": "JavaScript"
     },
     {
@@ -40,7 +51,7 @@
     "forks": 0,
     "openIssues": 0,
     "openPRs": 0,
-    "repos": 3
+    "repos": 4
   },
   "feed": []
 }
