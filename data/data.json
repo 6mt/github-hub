@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-10-13T03:22:54.252Z",
+  "generatedAt": "2026-10-13T10:55:32.296Z",
   "repos": [
+    {
+      "repo": "6mt/prism-core",
+      "url": "https://github.com/6mt/prism-core",
+      "desc": "Kernel-agnostic domain model and adapter interface for PM workbenches (Apache-2.0)",
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 0,
+      "openPRs": 0,
+      "pushedAt": "2026-10-13T04:24:39Z",
+      "language": "JavaScript"
+    },
     {
       "repo": "6mt/github-hub",
       "url": "https://github.com/6mt/github-hub",
@@ -9,7 +20,7 @@
       "forks": 0,
       "openIssues": 0,
       "openPRs": 0,
-      "pushedAt": "2026-10-12T22:45:49Z",
+      "pushedAt": "2026-10-13T03:22:55Z",
       "language": "JavaScript"
     },
     {
@@ -51,7 +62,7 @@
     "forks": 0,
     "openIssues": 0,
     "openPRs": 0,
-    "repos": 4
+    "repos": 5
   },
   "feed": []
 }

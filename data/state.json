@@ -2,14 +2,16 @@
   "lastEventId": {
     "6mt/dsh-plugin-loopback-trust": 22697963473,
     "6mt/hello-world": 0,
-    "6mt/github-hub": 23817926770,
-    "6mt/x-prompt-diff-lab": 23715813917
+    "6mt/github-hub": 23834560392,
+    "6mt/x-prompt-diff-lab": 23715813917,
+    "6mt/prism-core": 0
   },
   "stars": {
     "6mt/dsh-plugin-loopback-trust": 0,
     "6mt/hello-world": 0,
     "6mt/github-hub": 0,
-    "6mt/x-prompt-diff-lab": 0
+    "6mt/x-prompt-diff-lab": 0,
+    "6mt/prism-core": 0
   },
-  "lastRun": "2026-10-13T03:22:54.252Z"
+  "lastRun": "2026-10-13T10:55:32.296Z"
 }
