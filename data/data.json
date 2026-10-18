@@ -1,15 +1,15 @@
 {
-  "generatedAt": "2026-10-18T12:44:34.739Z",
+  "generatedAt": "2026-10-18T16:23:34.680Z",
   "repos": [
     {
       "repo": "6mt/dsh-control",
       "url": "https://github.com/6mt/dsh-control",
-      "desc": "本地一个窗口，驱动你所有机器上的 dsh · Drive the dsh instances on your other machines from one local window",
+      "desc": "多机 dsh 控制：从本地一个窗口驱动你其他服务器上的 dsh——远端会话原生进侧栏，整台远端界面也能搬进来。与同名技能项目不同，本插件解决的是跨机器。· Control the dsh instances on your other machines from one local window.",
       "stars": 0,
       "forks": 0,
       "openIssues": 0,
       "openPRs": 0,
-      "pushedAt": "2026-10-18T09:57:55Z",
+      "pushedAt": "2026-10-18T15:00:54Z",
       "language": "JavaScript"
     },
     {
@@ -20,7 +20,7 @@
       "forks": 0,
       "openIssues": 0,
       "openPRs": 0,
-      "pushedAt": "2026-10-18T08:17:34Z",
+      "pushedAt": "2026-10-18T12:44:35Z",
       "language": "JavaScript"
     },
     {
