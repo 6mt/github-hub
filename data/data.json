@@ -1,6 +1,17 @@
 {
-  "generatedAt": "2026-11-10T12:14:42.523Z",
+  "generatedAt": "2026-11-10T19:55:15.179Z",
   "repos": [
+    {
+      "repo": "6mt/github-hub",
+      "url": "https://github.com/6mt/github-hub",
+      "desc": "Auto dashboard & activity feed for my public repos",
+      "stars": 0,
+      "forks": 0,
+      "openIssues": 0,
+      "openPRs": 0,
+      "pushedAt": "2026-11-10T12:14:43Z",
+      "language": "JavaScript"
+    },
     {
       "repo": "6mt/dsh-control",
       "url": "https://github.com/6mt/dsh-control",
@@ -10,17 +21,6 @@
       "openIssues": 0,
       "openPRs": 0,
       "pushedAt": "2026-11-10T08:54:20Z",
-      "language": "JavaScript"
-    },
-    {
-      "repo": "6mt/github-hub",
-      "url": "https://github.com/6mt/github-hub",
-      "desc": "Auto dashboard & activity feed for my public repos",
-      "stars": 0,
-      "forks": 0,
-      "openIssues": 0,
-      "openPRs": 0,
-      "pushedAt": "2026-11-10T03:43:25Z",
       "language": "JavaScript"
     },
     {
